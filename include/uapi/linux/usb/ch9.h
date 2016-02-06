@@ -907,6 +907,12 @@ struct usb_ptm_cap_descriptor {
 } __attribute__((packed));
 
 /*
+ * The size of the descriptor for the Sublink Speed Attribute Count
+ * (SSAC) specified in bmAttributes[4:0].
+ */
+#define USB_DT_USB_SSP_CAP_SIZE(ssac)	(16 + ssac * 4)
+
+/*
  * Configuration Summary descriptors: Defines a list of functions in the
  * configuration. This descriptor may be used by Host software to decide
  * which Configuration to use to obtain the desired functionality.
